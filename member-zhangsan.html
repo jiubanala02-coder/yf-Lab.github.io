@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YF-Lab | 张三的个人主页</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -6px;
+            left: 0;
+            background-color: #4f46e5;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        /* 个人主页自定义风格 */
+        .profile-bg {
+            background: linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- 导航栏 -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
+                        <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white text-sm">
+                            <i class="fa-solid fa-code-branch"></i>
+                        </div>
+                        YF-Lab
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-10">
+                    <a href="index.html" class="nav-link text-slate-600 hover:text-slate-900 font-semibold transition">返回实验室主页</a>
+                    <a href="team.html" class="nav-link active text-slate-900 font-semibold transition">返回团队列表</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 个人头部信息区 -->
+    <div class="profile-bg border-b border-indigo-100 py-20 relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+        
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center gap-10 relative z-10">
+            <img src="https://ui-avatars.com/api/?name=张+三&background=4f46e5&color=fff&size=256" alt="张三" class="w-40 h-40 rounded-full border-4 border-white shadow-xl">
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-3 tracking-tight">张三</h1>
+                <p class="text-xl text-indigo-700 font-bold mb-4">2023级 博士研究生</p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-6 text-slate-600 font-medium">
+                    <a href="mailto:zhangsan@example.com" class="flex items-center hover:text-indigo-600 transition-colors"><i class="fa-solid fa-envelope mr-2"></i> zhangsan@example.com</a>
+                    <a href="#" class="flex items-center hover:text-indigo-600 transition-colors"><i class="fa-brands fa-github mr-2"></i> github.com/zhangsan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 个人内容区 -->
+    <main class="flex-grow py-16">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 space-y-12">
+            
+            <!-- 关于我 -->
+            <section class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+                    <div class="w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fa-solid fa-user-astronaut text-indigo-600"></i>
+                    </div>
+                    关于我
+                </h2>
+                <div class="text-slate-600 leading-relaxed space-y-4 text-lg">
+                    <p>
+                        你好！我是张三，目前在 YF-Lab 攻读博士学位。我本科毕业于XX大学计算机科学专业。我对将人工智能技术应用于解决生命科学中的复杂问题充满热情。
+                    </p>
+                    <p>
+                        在实验室里，我主要负责单细胞多组学数据的融合与分析工作。我喜欢钻研底层算法，也乐于将它们封装成易用的工具分享给研究社区。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 科研与工作 -->
+            <section class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+                    <div class="w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fa-solid fa-microscope text-indigo-600"></i>
+                    </div>
+                    科研与工作
+                </h2>
+                <div class="space-y-6">
+                    <!-- 科研项目/成果 -->
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">研究方向：系统生物学与复杂网络</h3>
+                        <p class="text-slate-600 leading-relaxed mb-4 text-lg">
+                            致力于利用图神经网络（GNN）建模细胞间的相互作用网络，近期提出了一种基于对比学习的无监督细胞聚类算法，能够更精准地识别稀有细胞亚群。
+                        </p>
+                        <div class="bg-slate-50 p-6 rounded-2xl border-l-4 border-indigo-500">
+                            <p class="font-bold text-slate-900 mb-2">近期发表：</p>
+                            <p class="text-slate-600">Zhang, S., et al. "Graph-based Single-Cell Analysis via Contrastive Learning." <em>Bioinformatics</em>, 2024.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 生活与随想 -->
+            <section class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+                    <div class="w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fa-solid fa-mug-hot text-indigo-600"></i>
+                    </div>
+                    生活与随想
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- 随想卡片 -->
+                    <div class="bg-amber-50 p-8 rounded-2xl border border-amber-100">
+                        <h3 class="font-bold text-amber-900 text-xl mb-3 flex items-center gap-2"><i class="fa-solid fa-mountain-sun"></i> 业余爱好</h3>
+                        <p class="text-amber-800 leading-relaxed">
+                            科研之余，我是一个狂热的徒步爱好者。周末经常和实验室的小伙伴们去周边爬山，这不仅锻炼了身体，也让我在大自然中找到了解决算法 bug 的灵感。
+                        </p>
+                    </div>
+                    <!-- 随想卡片 -->
+                    <div class="bg-emerald-50 p-8 rounded-2xl border border-emerald-100">
+                        <h3 class="font-bold text-emerald-900 text-xl mb-3 flex items-center gap-2"><i class="fa-solid fa-lightbulb"></i> 近期思考</h3>
+                        <p class="text-emerald-800 leading-relaxed">
+                            “不要让代码运行的报错成为焦虑的源泉，而是把它当作通往真相的路标。” —— 记最近一次 debug 了一整周的感悟。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- 底部页脚 -->
+    <footer class="bg-slate-900 py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center text-slate-400 text-sm font-medium">
+            <p>&copy; 2025 张三的个人主页 @ YF-Lab</p>
+        </div>
+    </footer>
+
+</body>
+</html>

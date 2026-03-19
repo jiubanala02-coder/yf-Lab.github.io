@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YF-Lab | 研究领域</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: ''; position: absolute; width: 0; height: 2px; bottom: -6px; left: 0;
+            background-color: #4f46e5; transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        /* 全新卡片动效 */
+        .hover-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(79, 70, 229, 0.15);
+            border-color: #c7d2fe;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- 导航栏 -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
+                        <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white text-sm">
+                            <i class="fa-solid fa-code-branch"></i>
+                        </div>
+                        YF-Lab
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-10">
+                    <a href="index.html" class="nav-link text-slate-600 hover:text-slate-900 font-semibold transition">首页</a>
+                    <a href="about.html" class="nav-link text-slate-600 hover:text-slate-900 font-semibold transition">实验室简介</a>
+                    <a href="research.html" class="nav-link active text-slate-900 font-semibold transition">研究领域</a>
+                    <a href="news.html" class="nav-link text-slate-600 hover:text-slate-900 font-semibold transition">实验室动态</a>
+                    <a href="team.html" class="nav-link text-slate-600 hover:text-slate-900 font-semibold transition">团队成员</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题区 -->
+    <div class="bg-indigo-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold mb-4">研究领域</h1>
+            <p class="text-indigo-200 text-lg max-w-2xl mx-auto font-light">聚焦三大核心方向，探索AI与前沿科学的无限可能</p>
+        </div>
+    </div>
+
+    <!-- 主要内容 (改用网格化全新排版) -->
+    <main class="flex-grow py-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                
+                <!-- 方向一 -->
+                <div class="bg-white rounded-3xl p-10 border border-slate-100 shadow-sm hover-card relative overflow-hidden group">
+                    <div class="absolute -right-6 -top-6 w-32 h-32 bg-cyan-50 rounded-full group-hover:scale-150 transition-transform duration-500 ease-out z-0"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-cyan-100 text-cyan-600 rounded-2xl flex items-center justify-center text-3xl mb-8 shadow-inner">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">复杂网络与系统生物学建模</h2>
+                        <p class="text-slate-600 leading-relaxed font-light">
+                            针对海量异构的生物分子数据，我们致力于构建大规模异构图神经网络（GNN）。通过对基因调控网络、蛋白质互作网络的深度表征学习，揭示复杂疾病背后的系统性病理机制。
+                        </p>
+                        <ul class="mt-6 space-y-2 text-sm text-slate-500">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-500"></i> 动态图表示学习</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-500"></i> 多尺度网络对齐</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 方向二 -->
+                <div class="bg-white rounded-3xl p-10 border border-slate-100 shadow-sm hover-card relative overflow-hidden group">
+                    <div class="absolute -right-6 -top-6 w-32 h-32 bg-indigo-50 rounded-full group-hover:scale-150 transition-transform duration-500 ease-out z-0"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-3xl mb-8 shadow-inner">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">多模态健康数据智能分析</h2>
+                        <p class="text-slate-600 leading-relaxed font-light">
+                            打破单一数据源的局限，融合电子病历（EHR）、医学影像（MRI/CT）及可穿戴设备传感数据。利用大语言模型（LLM）与视觉-语言模型（VLM）进行多模态对齐，实现疾病的早筛早诊。
+                        </p>
+                        <ul class="mt-6 space-y-2 text-sm text-slate-500">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-500"></i> 医疗大模型微调</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-500"></i> 跨模态特征融合</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 方向三 -->
+                <div class="bg-white rounded-3xl p-10 border border-slate-100 shadow-sm hover-card relative overflow-hidden group">
+                    <div class="absolute -right-6 -top-6 w-32 h-32 bg-fuchsia-50 rounded-full group-hover:scale-150 transition-transform duration-500 ease-out z-0"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-fuchsia-100 text-fuchsia-600 rounded-2xl flex items-center justify-center text-3xl mb-8 shadow-inner">
+                            <i class="fa-solid fa-capsules"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">生成式 AI 与分子设计</h2>
+                        <p class="text-slate-600 leading-relaxed font-light">
+                            探索扩散模型（Diffusion Models）与强化学习在靶向药物发现中的应用。通过计算生成具备特定物理化学性质及高结合亲和力的新型小分子，极大缩短药物研发的早期周期。
+                        </p>
+                        <ul class="mt-6 space-y-2 text-sm text-slate-500">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-fuchsia-500"></i> 3D 分子构象生成</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-fuchsia-500"></i> 蛋白质-配体对接预测</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 底部页脚 -->
+    <footer class="bg-slate-900 text-slate-400 py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0 text-center md:text-left">
+                <span class="text-xl font-black text-white flex items-center justify-center md:justify-start gap-2">
+                    <i class="fa-solid fa-code-branch text-indigo-500"></i>YF-Lab
+                </span>
+                <p class="text-sm mt-3">数据智能与前沿交叉实验室 &copy; 2025</p>
+            </div>
+            <div class="flex space-x-8 text-sm font-medium">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-building-columns"></i> XX大学 XX学院</span>
+                <a href="mailto:hello@yflab.org" class="hover:text-white transition flex items-center gap-2"><i class="fa-solid fa-envelope"></i> hello@yflab.org</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
